@@ -36,7 +36,7 @@ class Record:
             if p.value == old_phone:
                 p.value = new_phone   
 
-    def find(self, phone):
+    def find_phone(self, phone):
         for p in self.phones:
             if p.value == phone:
                 return p.value                      
