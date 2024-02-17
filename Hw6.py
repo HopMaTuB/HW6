@@ -28,7 +28,7 @@ class Record:
 
     def del_phone(self,phone):
         for p in self.phones:
-            if p.value != phone:
+            if p.value == phone:
                 self.phones.remove(p)
     
     def edit_phone(self, old_phone, new_phone):
