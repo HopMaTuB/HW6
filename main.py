@@ -12,10 +12,10 @@ class Name(Field):
 
 class Phone(Field):
     def __init__(self, value):
-        if len(value)>=10:
+        if len(value)==10 and value.isdigit():
             super().__init__(value)
         else:
-            raise ValueError("Phone number must be Longer than 10 numbers")
+            raise ValueError
         
 
 class Record:
@@ -38,9 +38,9 @@ class Record:
                 if len(p.value)<10:
                     raise ValueError("Phone number must be Longer than 10 numbers")
                 else:
-                    return None
+                    return p
             else:
-                raise ValueError (f"This number does not exist")   
+                raise ValueError   
 
     def find_phone(self, phone):
         for p in self.phones:
