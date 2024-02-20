@@ -35,12 +35,9 @@ class Record:
         for p in self.phones:
             if p.value == old_phone:
                 p.value = new_phone
-                if len(p.value)!=10:
-                    raise ValueError
-                else:
-                    return p
+                break
             else:
-                raise ValueError   
+                raise ValueError 
 
     def find_phone(self, phone):
         for p in self.phones:
@@ -56,7 +53,7 @@ class AddressBook(UserDict):
 
     def find(self, name):
         if name not in self.data:
-            raise ValueError(f"{Name} doesn't exist")
+            raise ValueError(f"{name} doesn't exist")
         else:
             return self.data[name]
 
