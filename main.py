@@ -35,9 +35,12 @@ class Record:
         for p in self.phones:
             if p.value == old_phone:
                 p.value = new_phone
-                break
+                if len(p.value)!=10:
+                    raise ValueError("Phone number must be Longer than 10 numbers")
+                else:
+                    return p                
             else:
-                raise ValueError 
+                raise ValueError
 
     def find_phone(self, phone):
         for p in self.phones:
